@@ -1,8 +1,7 @@
-const Button = (props) => {
-  const { children } = props;
+const Button = ({ children, href }: { children: React.ReactNode; href?: string }) => {
 
   return (
-    <div className="inline-flex">
+    <a href={href} className="inline-flex no-underline">
       <div
         className="
           p-1.5 rounded-md
@@ -20,7 +19,7 @@ const Button = (props) => {
           {children}
         </div>
       </div>
-    </div>
+    </a>
   );
 };
 

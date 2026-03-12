@@ -6,7 +6,6 @@ import HowItWorks from './HowItWorks'
 import FAQ from './FAQ'
 import FinalCTA from './FinalCTA'
 
-import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 
 export default function App() {

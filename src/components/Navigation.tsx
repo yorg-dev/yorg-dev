@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const NAV_ITEMS = [
+const NAV_ITEMS: { icon: string; label: string; href: string; cta?: boolean }[] = [
   { icon: '🏠', label: 'HOME',     href: '#' },
   { icon: '⭐', label: 'BENEFITS', href: '#benefits' },
   { icon: '🌿', label: 'AGENTS',   href: '#agents' },

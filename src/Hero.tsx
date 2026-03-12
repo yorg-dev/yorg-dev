@@ -27,18 +27,18 @@ export default function Hero() {
 
       {/* Hero body */}
       <section className="relative z-10 flex flex-col items-center justify-center min-h-[85vh] px-6 pb-24">
-        <div class="relative container lg:max-w-5xl m-auto px-4 sm:px-6 lg:px-8">
-          <div class="relative flex flex-col items-start sm:items-center sm:text-center">
+        <div className="relative container lg:max-w-5xl m-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative flex flex-col items-start sm:items-center sm:text-center">
             <img
               src={logo} alt="Yorg" className="pixel-art"
               style={{ width: 168, height: 168, objectFit: 'contain', display: 'block' }}
             />
 
-            <h1 class="font-display font-extrabold text-soil-800 text-5xl xs:text-5xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-6xl !tracking-[-.045em] relative mb-6 -mt-4 sm:-mt-5 lg:-mt-6 xl:mt-[-26px]">
-              The Easiest Way to Start and Grow Your Business With <span class="bg-gradient-to-r from-grass-600 via-wood-600 to-soil-800 inline-block text-transparent bg-clip-text text-shadow-lg shadow-gray-700">AI Automation</span>
+            <h1 className="font-display font-extrabold text-soil-800 text-5xl xs:text-5xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-6xl !tracking-[-.045em] relative mb-6 -mt-4 sm:-mt-5 lg:-mt-6 xl:mt-[-26px]">
+              The Easiest Way to Start and Grow Your Business With <span className="bg-gradient-to-r from-grass-600 via-wood-600 to-soil-800 inline-block text-transparent bg-clip-text text-shadow-lg shadow-gray-700">AI Automation</span>
             </h1>
 
-            <p class="sm:max-w-96 md:max-w-2xl lg:mx-auto text-base text-soil-800 lg:text-lg xl:text-lg mb-9">
+            <p className="sm:max-w-96 md:max-w-2xl lg:mx-auto text-base text-soil-800 lg:text-lg xl:text-lg mb-9">
               Using AI Agents has never been this Easy (or This Much Fun!)
             </p>
           </div>
