@@ -1,9 +1,25 @@
-import './App.css'
+import Hero from './Hero'
+import Benefits from './Benefits'
+import Problem from './Problem'
+import AgentRoster from './AgentRoster'
+import HowItWorks from './HowItWorks'
+import FAQ from './FAQ'
+import FinalCTA from './FinalCTA'
 
-function App() {
+import Navigation from './components/Navigation'
+import Footer from './components/Footer'
+
+export default function App() {
   return (
-    <h1>Yorg</h1>
+    <>
+      <Hero />
+      <Benefits />
+      <Problem />
+      <AgentRoster />
+      <HowItWorks />
+      <FAQ />
+      <FinalCTA />
+      <Footer />
+    </>
   )
 }
-
-export default App
