@@ -1,4 +1,5 @@
-import Navigation from '../components/Navigation'
+import NavBar from '../components/NavBar'
+import NavItems from '../components/NavItems'
 import Footer from '../components/Footer'
 
 const EFFECTIVE_DATE = 'March 15, 2026'
@@ -73,7 +74,7 @@ const SECTIONS: Section[] = [
           'Analytics providers — aggregated, anonymised site usage data.',
         ],
       },
-      'When you connect a third-party integration (such as Slack, HubSpot, or Shopify) to your Yorg account, you are subject to that service\'s own privacy policy. We access only the data you explicitly authorise.',
+      "When you connect a third-party integration (such as Slack, HubSpot, or Shopify) to your Yorg account, you are subject to that service's own privacy policy. We access only the data you explicitly authorise.",
     ],
   },
   {
@@ -110,7 +111,7 @@ const SECTIONS: Section[] = [
     ],
   },
   {
-    title: '8. Children\'s Privacy',
+    title: "8. Children's Privacy",
     content: [
       'Our services are not directed to children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us and we will delete it promptly.',
     ],
@@ -127,10 +128,7 @@ const SECTIONS: Section[] = [
     content: [
       'If you have questions or concerns about this Privacy Policy or our data practices, please contact us:',
       {
-        list: [
-          'Email: privacy@yorg.dev',
-          'Contact form: yorg.dev/contact',
-        ],
+        list: ['Email: privacy@yorg.dev', 'Contact form: yorg.dev/contact'],
       },
     ],
   },
@@ -139,10 +137,9 @@ const SECTIONS: Section[] = [
 export default function Privacy() {
   return (
     <div className="min-h-screen bg-soil-900">
-
       {/* Header */}
       <div
-        className="relative overflow-hidden bg-grass-950 px-6 pt-5 pb-20"
+        className="relative overflow-hidden bg-grass-950 px-6 pb-20"
         style={{
           backgroundImage: `
             repeating-linear-gradient(0deg, rgba(20,60,10,0.4) 0px, transparent 1px, transparent 31px, rgba(20,60,10,0.4) 32px),
@@ -153,10 +150,15 @@ export default function Privacy() {
       >
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(50,120,20,0.3) 0%, transparent 100%)' }}
+          style={{
+            background:
+              'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(50,120,20,0.3) 0%, transparent 100%)',
+          }}
         />
 
-        <Navigation />
+        <NavBar>
+          <NavItems />
+        </NavBar>
 
         <div className="relative z-10 max-w-2xl mx-auto text-center mt-16">
           <div className="pixel-scroll inline-block px-10 py-6 mb-6">
@@ -176,20 +178,22 @@ export default function Privacy() {
       {/* Content card */}
       <div className="max-w-3xl mx-auto px-6 -mt-8 pb-20 relative z-10">
         <div className="bg-wood-100 border-4 border-wood-700 shadow-[inset_2px_2px_0_rgba(255,255,255,0.45),inset_-2px_-2px_0_rgba(100,60,0,0.3),6px_6px_0_rgba(0,0,0,0.45)]">
-
           {/* Intro */}
           <div className="px-8 pt-8 pb-6 border-b-4 border-dashed border-wood-400">
             <p
               className="text-wood-800 text-base font-semibold leading-relaxed"
               style={{ fontFamily: 'Nunito, sans-serif' }}
             >
-              Yorg ("we", "our", or "us") operates the website at yorg.dev and the Yorg platform. This Privacy Policy explains what personal information we collect, how we use it, and your rights with respect to that information. By using our services, you agree to the practices described here.
+              Yorg ("we", "our", or "us") operates the website at yorg.dev and the Yorg platform.
+              This Privacy Policy explains what personal information we collect, how we use it, and
+              your rights with respect to that information. By using our services, you agree to the
+              practices described here.
             </p>
           </div>
 
           {/* Sections */}
           <div className="divide-y-4 divide-dashed divide-wood-300">
-            {SECTIONS.map(section => (
+            {SECTIONS.map((section) => (
               <div key={section.title} className="px-8 py-7">
                 <h2
                   className="pixel-font text-wood-950 mb-5"
@@ -209,7 +213,7 @@ export default function Privacy() {
                       </p>
                     ) : (
                       <ul key={i} className="flex flex-col gap-1.5 pl-2">
-                        {block.list.map(item => (
+                        {block.list.map((item) => (
                           <li
                             key={item}
                             className="text-wood-800 text-sm font-semibold leading-relaxed flex gap-2"
@@ -226,7 +230,6 @@ export default function Privacy() {
               </div>
             ))}
           </div>
-
         </div>
       </div>
 

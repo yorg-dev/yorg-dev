@@ -1,4 +1,5 @@
-import Navigation from '../components/Navigation'
+import NavBar from '../components/NavBar'
+import NavItems from '../components/NavItems'
 import Footer from '../components/Footer'
 
 const EFFECTIVE_DATE = 'March 15, 2026'
@@ -80,7 +81,7 @@ const SECTIONS: Section[] = [
       {
         list: [
           'Authorise Yorg to access and interact with that third-party service on your behalf.',
-          'Agree to comply with the third party\'s own terms of service and acceptable use policies.',
+          "Agree to comply with the third party's own terms of service and acceptable use policies.",
           'Acknowledge that Yorg is not responsible for the availability, accuracy, or conduct of any third-party service.',
         ],
       },
@@ -98,7 +99,7 @@ const SECTIONS: Section[] = [
           'Authorise us to charge your payment method on a recurring basis for the subscription period.',
         ],
       },
-      'All fees are stated in US dollars and are non-refundable except as expressly set out in these Terms or required by law. We reserve the right to change our pricing with 30 days\' notice. Continued use after a price change constitutes acceptance of the new pricing.',
+      "All fees are stated in US dollars and are non-refundable except as expressly set out in these Terms or required by law. We reserve the right to change our pricing with 30 days' notice. Continued use after a price change constitutes acceptance of the new pricing.",
     ],
   },
   {
@@ -171,10 +172,7 @@ const SECTIONS: Section[] = [
     content: [
       'If you have questions about these Terms, please contact us:',
       {
-        list: [
-          'Email: legal@yorg.dev',
-          'Contact form: yorg.dev/contact',
-        ],
+        list: ['Email: legal@yorg.dev', 'Contact form: yorg.dev/contact'],
       },
     ],
   },
@@ -183,10 +181,9 @@ const SECTIONS: Section[] = [
 export default function Terms() {
   return (
     <div className="min-h-screen bg-soil-900">
-
       {/* Header */}
       <div
-        className="relative overflow-hidden bg-grass-950 px-6 pt-5 pb-20"
+        className="relative overflow-hidden bg-grass-950 px-6 pb-20"
         style={{
           backgroundImage: `
             repeating-linear-gradient(0deg, rgba(20,60,10,0.4) 0px, transparent 1px, transparent 31px, rgba(20,60,10,0.4) 32px),
@@ -197,10 +194,15 @@ export default function Terms() {
       >
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(50,120,20,0.3) 0%, transparent 100%)' }}
+          style={{
+            background:
+              'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(50,120,20,0.3) 0%, transparent 100%)',
+          }}
         />
 
-        <Navigation />
+        <NavBar>
+          <NavItems />
+        </NavBar>
 
         <div className="relative z-10 max-w-2xl mx-auto text-center mt-16">
           <div className="pixel-scroll inline-block px-10 py-6 mb-6">
@@ -220,20 +222,22 @@ export default function Terms() {
       {/* Content card */}
       <div className="max-w-3xl mx-auto px-6 -mt-8 pb-20 relative z-10">
         <div className="bg-wood-100 border-4 border-wood-700 shadow-[inset_2px_2px_0_rgba(255,255,255,0.45),inset_-2px_-2px_0_rgba(100,60,0,0.3),6px_6px_0_rgba(0,0,0,0.45)]">
-
           {/* Intro */}
           <div className="px-8 pt-8 pb-6 border-b-4 border-dashed border-wood-400">
             <p
               className="text-wood-800 text-base font-semibold leading-relaxed"
               style={{ fontFamily: 'Nunito, sans-serif' }}
             >
-              Please read these Terms of Service carefully before using Yorg. These Terms form a legally binding agreement between you and Yorg. If you are using the Services on behalf of a business or organisation, you represent that you have authority to bind that entity to these Terms.
+              Please read these Terms of Service carefully before using Yorg. These Terms form a
+              legally binding agreement between you and Yorg. If you are using the Services on
+              behalf of a business or organisation, you represent that you have authority to bind
+              that entity to these Terms.
             </p>
           </div>
 
           {/* Sections */}
           <div className="divide-y-4 divide-dashed divide-wood-300">
-            {SECTIONS.map(section => (
+            {SECTIONS.map((section) => (
               <div key={section.title} className="px-8 py-7">
                 <h2
                   className="pixel-font text-wood-950 mb-5"
@@ -253,7 +257,7 @@ export default function Terms() {
                       </p>
                     ) : (
                       <ul key={i} className="flex flex-col gap-1.5 pl-2">
-                        {block.list.map(item => (
+                        {block.list.map((item) => (
                           <li
                             key={item}
                             className="text-wood-800 text-sm font-semibold leading-relaxed flex gap-2"
@@ -270,7 +274,6 @@ export default function Terms() {
               </div>
             ))}
           </div>
-
         </div>
       </div>
 

@@ -9,7 +9,10 @@ export default function Newsletter() {
     e.preventDefault()
     const trimmed = email.trim()
     if (!trimmed) return
-    if (website) { setStatus('success'); return }
+    if (website) {
+      setStatus('success')
+      return
+    }
 
     setStatus('loading')
 
@@ -45,13 +48,19 @@ export default function Newsletter() {
       {/* top border */}
       <div
         className="benefits-top-border"
-        style={{ background: 'repeating-linear-gradient(90deg, #1a2a50 0px, #1a2a50 28px, #0f1e3e 28px, #0f1e3e 32px)' }}
+        style={{
+          background:
+            'repeating-linear-gradient(90deg, #1a2a50 0px, #1a2a50 28px, #0f1e3e 28px, #0f1e3e 32px)',
+        }}
       />
 
       {/* Radial glow */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 60% 55% at 50% 50%, rgba(30,60,120,0.55) 0%, transparent 100%)' }}
+        style={{
+          background:
+            'radial-gradient(ellipse 60% 55% at 50% 50%, rgba(30,60,120,0.55) 0%, transparent 100%)',
+        }}
       />
 
       <div className="relative z-10 flex flex-col items-center">
@@ -61,7 +70,8 @@ export default function Newsletter() {
           className="text-[17px] leading-[1.8] font-bold max-w-[500px] mb-9 text-[#8ab0e8]"
           style={{ fontFamily: 'Nunito, sans-serif' }}
         >
-          Get early access updates, new agent drops, and cultivation tips delivered straight to your inbox.
+          Get early access updates, new agent drops, and cultivation tips delivered straight to your
+          inbox.
         </p>
 
         {status === 'success' ? (
@@ -86,7 +96,7 @@ export default function Newsletter() {
               type="text"
               name="website"
               value={website}
-              onChange={e => setWebsite(e.target.value)}
+              onChange={(e) => setWebsite(e.target.value)}
               tabIndex={-1}
               autoComplete="off"
               aria-hidden="true"
@@ -95,7 +105,7 @@ export default function Newsletter() {
             <input
               type="email"
               value={email}
-              onChange={e => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="your@email.com"
               required
               disabled={status === 'loading'}

@@ -1,12 +1,11 @@
 import logo from './assets/yorg-logo.png'
 import landBg from './assets/land_background.png'
-import Navigation from './components/Navigation'
-import Button from './Button'
+import NavBar from './components/NavBar'
+import NavItems from './components/NavItems'
 
 export default function Hero() {
   return (
     <div className="relative min-h-screen overflow-hidden">
-
       {/* Actual game world background */}
       <img
         src={landBg}
@@ -15,27 +14,40 @@ export default function Hero() {
       />
 
       {/* Darken overall so UI stays legible */}
-      <div className="absolute inset-0 pointer-events-none" style={{ background: 'rgba(145,206,187,0.50)' }} />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: 'rgba(145,206,187,0.70)' }}
+      />
 
       {/* Radial vignette — heavier at edges */}
       <div
         className="absolute inset-0 pointer-events-none z-[1]"
-        style={{ background: 'radial-gradient(ellipse 75% 75% at 50% 50%, transparent 20%, rgba(145,206,187,0.80) 100%)' }}
+        style={{
+          background:
+            'radial-gradient(ellipse 75% 75% at 50% 50%, transparent 20%, rgba(145,206,187,0.90) 100%)',
+        }}
       />
 
-      <Navigation />
+      <NavBar>
+        <NavItems />
+      </NavBar>
 
       {/* Hero body */}
       <section className="relative z-10 flex flex-col items-center justify-center min-h-[85vh] px-6 pb-24">
-        <div className="relative container lg:max-w-5xl m-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative container lg:max-w-5xl m-auto px-4 sm:px-6 lg:px-8 my-8">
           <div className="relative flex flex-col items-start sm:items-center sm:text-center">
             <img
-              src={logo} alt="Yorg" className="pixel-art"
+              src={logo}
+              alt="Yorg"
+              className="pixel-art mb-8"
               style={{ width: 168, height: 168, objectFit: 'contain', display: 'block' }}
             />
 
             <h1 className="font-display font-extrabold text-soil-800 text-5xl xs:text-5xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-6xl !tracking-[-.045em] relative mb-6 -mt-4 sm:-mt-5 lg:-mt-6 xl:mt-[-26px]">
-              The Easiest Way to Start and Grow Your Business With <span className="bg-gradient-to-r from-grass-600 via-wood-600 to-soil-800 inline-block text-transparent bg-clip-text text-shadow-lg shadow-gray-700">AI Automation</span>
+              The Easiest Way to Start and Grow Your Business With{' '}
+              <span className="bg-gradient-to-r from-grass-600 via-wood-600 to-soil-800 inline-block text-transparent bg-clip-text text-shadow-lg shadow-gray-700">
+                AI Automation
+              </span>
             </h1>
 
             <p className="sm:max-w-96 md:max-w-2xl lg:mx-auto text-base text-soil-800 lg:text-2xl xl:text-2xl mb-9">
@@ -43,15 +55,21 @@ export default function Hero() {
             </p>
           </div>
         </div>
-        <div>
-          <Button href={import.meta.env.VITE_GAME_URL}>
-            Play Now
-          </Button>
-          <p className="mb-4 text-soil-900">
-            Grow&nbsp;·&nbsp;Build&nbsp;·&nbsp;Thrive
-          </p>
+        <div className="flex flex-col items-center">
+          <a
+            href={import.meta.env.VITE_GAME_URL}
+            className="cta-button-xl px-12 py-5 mb-7 inline-block no-underline"
+          >
+            <span
+              className="pixel-font"
+              style={{ fontSize: 11, color: '#e8f8d0', letterSpacing: '0.08em' }}
+            >
+              Play Now
+            </span>
+          </a>
+          <p className="text-lg mb-4 text-soil-900">Grow&nbsp;·&nbsp;Build&nbsp;·&nbsp;Thrive</p>
         </div>
       </section>
     </div>
-  );
+  )
 }

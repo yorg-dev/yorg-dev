@@ -1,12 +1,16 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* ============================================
    YORG — Design Token Theme
    ============================================ */
 
 @theme {
+  /* Fonts */
+  --font-sans: 'Nunito', sans-serif;
+  --font-display: 'Nunito', sans-serif;
+
   /* Wood color scale */
-  --color-wood-50:  #fdf5e0;
+  --color-wood-50: #fdf5e0;
   --color-wood-100: #f8eecc;
   --color-wood-200: #f0d890;
   --color-wood-300: #e8c878;
@@ -28,6 +32,15 @@
   --color-grass-900: #1a3a08;
   --color-grass-950: #0e2808;
 
+  /* Parchment — NavBar frame color scale */
+  --color-parchment-100: #f7e8c3;
+  --color-parchment-200: #e4c89e;
+  --color-parchment-300: #d4b896;
+  --color-parchment-400: #c9a87a;
+  --color-parchment-500: #bf9163;
+  --color-parchment-600: #8d6564;
+  --color-parchment-900: #5c3d1e;
+
   /* Plum — menu background */
   --color-plum-500: #6f4a51;
 
@@ -37,25 +50,59 @@
   --color-soil-950: #1e0e04;
 
   /* Navigation shadows */
-  --shadow-wood-rail:    inset 0 3px 0 rgba(255,255,255,0.22), inset 0 -3px 0 rgba(0,0,0,0.38), 0 6px 0 rgba(0,0,0,0.40), 0 7px 0 rgba(0,0,0,0.15);
-  --shadow-wood-track:   inset 0 3px 5px rgba(0,0,0,0.65), inset 0 -1px 2px rgba(0,0,0,0.40);
-  --shadow-slot-default: inset 1px 1px 0 rgba(255,255,255,0.65), inset -1px -1px 0 rgba(170,120,50,0.38);
-  --shadow-slot-active:  inset 1px 1px 0 rgba(255,255,255,0.85), inset -1px -1px 0 rgba(170,120,50,0.35), 0 0 0 2.5px #fff, 0 0 0 4.5px rgba(190,150,70,0.55);
-  --shadow-slot-cta:     inset 1px 1px 0 rgba(255,255,255,0.70), inset -1px -1px 0 rgba(80,160,50,0.35);
+  --shadow-wood-rail:
+    inset 0 3px 0 rgba(255, 255, 255, 0.22), inset 0 -3px 0 rgba(0, 0, 0, 0.38),
+    0 6px 0 rgba(0, 0, 0, 0.4), 0 7px 0 rgba(0, 0, 0, 0.15);
+  --shadow-wood-track: inset 0 3px 5px rgba(0, 0, 0, 0.65), inset 0 -1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-slot-default:
+    inset 1px 1px 0 rgba(255, 255, 255, 0.65), inset -1px -1px 0 rgba(170, 120, 50, 0.38);
+  --shadow-slot-active:
+    inset 1px 1px 0 rgba(255, 255, 255, 0.85), inset -1px -1px 0 rgba(170, 120, 50, 0.35),
+    0 0 0 2.5px #fff, 0 0 0 4.5px rgba(190, 150, 70, 0.55);
+  --shadow-slot-cta:
+    inset 1px 1px 0 rgba(255, 255, 255, 0.7), inset -1px -1px 0 rgba(80, 160, 50, 0.35);
+
+  /* NavBar frame shadows */
+  --shadow-navbar-outer:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+  --shadow-navbar-inner: 0 3px 0 var(--color-parchment-500);
+
+  /* Parchment nav button shadows */
+  --shadow-parchment-raised:
+    inset 3px 3px 0 rgba(255, 255, 255, 0.7), inset -3px -3px 0 rgba(120, 70, 10, 0.4),
+    3px 3px 0 rgba(0, 0, 0, 0.4);
+  --shadow-parchment-hover:
+    inset 3px 3px 0 rgba(255, 255, 255, 0.8), inset -3px -3px 0 rgba(120, 70, 10, 0.35),
+    4px 4px 0 rgba(0, 0, 0, 0.45);
+  --shadow-parchment-pressed:
+    inset 3px 3px 0 rgba(120, 70, 10, 0.38), inset -2px -2px 0 rgba(255, 255, 255, 0.4),
+    1px 1px 0 rgba(0, 0, 0, 0.3);
 
   /* Button shadows */
-  --shadow-wood-btn:        inset 2px 2px 0 rgba(255,255,255,0.42), inset -2px -2px 0 rgba(0,0,0,0.30), 3px 3px 0 rgba(0,0,0,0.38);
-  --shadow-wood-btn-hover:  inset 2px 2px 0 rgba(255,255,255,0.42), inset -2px -2px 0 rgba(0,0,0,0.30), 3px 5px 0 rgba(0,0,0,0.32);
-  --shadow-wood-btn-active: inset 2px 2px 0 rgba(255,255,255,0.20), inset -2px -2px 0 rgba(0,0,0,0.30), 1px 1px 0 rgba(0,0,0,0.30);
-  --shadow-wood-btn-lg:     inset 3px 3px 0 rgba(255,255,255,0.28), inset -3px -3px 0 rgba(0,0,0,0.30), 6px 6px 0 rgba(0,0,0,0.50);
-  --shadow-wood-btn-lg-hover: inset 3px 3px 0 rgba(255,255,255,0.28), inset -3px -3px 0 rgba(0,0,0,0.30), 6px 8px 0 rgba(0,0,0,0.45), 0 0 40px rgba(100,190,40,0.45);
+  --shadow-wood-btn:
+    inset 2px 2px 0 rgba(255, 255, 255, 0.42), inset -2px -2px 0 rgba(0, 0, 0, 0.3),
+    3px 3px 0 rgba(0, 0, 0, 0.38);
+  --shadow-wood-btn-hover:
+    inset 2px 2px 0 rgba(255, 255, 255, 0.42), inset -2px -2px 0 rgba(0, 0, 0, 0.3),
+    3px 5px 0 rgba(0, 0, 0, 0.32);
+  --shadow-wood-btn-active:
+    inset 2px 2px 0 rgba(255, 255, 255, 0.2), inset -2px -2px 0 rgba(0, 0, 0, 0.3),
+    1px 1px 0 rgba(0, 0, 0, 0.3);
+  --shadow-wood-btn-lg:
+    inset 3px 3px 0 rgba(255, 255, 255, 0.28), inset -3px -3px 0 rgba(0, 0, 0, 0.3),
+    6px 6px 0 rgba(0, 0, 0, 0.5);
+  --shadow-wood-btn-lg-hover:
+    inset 3px 3px 0 rgba(255, 255, 255, 0.28), inset -3px -3px 0 rgba(0, 0, 0, 0.3),
+    6px 8px 0 rgba(0, 0, 0, 0.45), 0 0 40px rgba(100, 190, 40, 0.45);
 }
 
 /* ============================================
    YORG — Pixel World Design System
    ============================================ */
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -85,9 +132,12 @@ body {
   background-color: #78c341;
   background-image:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect width='32' height='32' fill='%2378c341'/%3E%3Crect width='32' height='1' fill='%235da832' opacity='0.55'/%3E%3Crect width='1' height='32' fill='%235da832' opacity='0.55'/%3E%3C/svg%3E"),
-    radial-gradient(ellipse 55% 55% at 25% 35%, rgba(55,130,15,0.18) 0%, transparent 100%),
-    radial-gradient(ellipse 45% 45% at 75% 65%, rgba(110,190,45,0.22) 0%, transparent 100%);
-  background-size: 32px 32px, 100% 100%, 100% 100%;
+    radial-gradient(ellipse 55% 55% at 25% 35%, rgba(55, 130, 15, 0.18) 0%, transparent 100%),
+    radial-gradient(ellipse 45% 45% at 75% 65%, rgba(110, 190, 45, 0.22) 0%, transparent 100%);
+  background-size:
+    32px 32px,
+    100% 100%,
+    100% 100%;
 }
 
 /* ---- Wooden portrait frame (top-left like in-game) ---- */
@@ -96,9 +146,9 @@ body {
   border: 4px solid #7a4a20;
   padding: 6px;
   box-shadow:
-    inset 2px 2px 0 rgba(255,255,255,0.45),
-    inset -2px -2px 0 rgba(100,60,0,0.35),
-    4px 4px 0 rgba(0,0,0,0.38);
+    inset 2px 2px 0 rgba(255, 255, 255, 0.45),
+    inset -2px -2px 0 rgba(100, 60, 0, 0.35),
+    4px 4px 0 rgba(0, 0, 0, 0.38);
 }
 
 /* ---- Large wooden display panel ---- */
@@ -106,9 +156,9 @@ body {
   background: #f0d890;
   border: 4px solid #7a4a20;
   box-shadow:
-    inset 3px 3px 0 rgba(255,255,255,0.45),
-    inset -3px -3px 0 rgba(100,60,0,0.35),
-    6px 6px 0 rgba(0,0,0,0.42);
+    inset 3px 3px 0 rgba(255, 255, 255, 0.45),
+    inset -3px -3px 0 rgba(100, 60, 0, 0.35),
+    6px 6px 0 rgba(0, 0, 0, 0.42);
 }
 
 /* ---- Scroll / mission panel ---- */
@@ -116,9 +166,9 @@ body {
   background: #f5e8c0;
   border: 4px solid #8b5a2b;
   box-shadow:
-    inset 2px 2px 0 rgba(255,255,255,0.5),
-    inset -2px -2px 0 rgba(120,70,10,0.28),
-    5px 5px 0 rgba(0,0,0,0.38);
+    inset 2px 2px 0 rgba(255, 255, 255, 0.5),
+    inset -2px -2px 0 rgba(120, 70, 10, 0.28),
+    5px 5px 0 rgba(0, 0, 0, 0.38);
 }
 
 /* ---- Nav title sign ---- */
@@ -126,9 +176,9 @@ body {
   background: #e8c878;
   border: 3px solid #7a4a20;
   box-shadow:
-    inset 2px 2px 0 rgba(255,255,255,0.38),
-    inset -2px -2px 0 rgba(100,60,0,0.28),
-    3px 3px 0 rgba(0,0,0,0.32);
+    inset 2px 2px 0 rgba(255, 255, 255, 0.38),
+    inset -2px -2px 0 rgba(100, 60, 0, 0.28),
+    3px 3px 0 rgba(0, 0, 0, 0.32);
 }
 
 /* ---- Wooden button ---- */
@@ -137,25 +187,28 @@ body {
   border: 3px solid #7a4a20;
   cursor: pointer;
   box-shadow:
-    inset 2px 2px 0 rgba(255,255,255,0.42),
-    inset -2px -2px 0 rgba(100,60,0,0.3),
-    3px 3px 0 rgba(0,0,0,0.38);
-  transition: transform 80ms ease, box-shadow 80ms ease, background 80ms ease;
+    inset 2px 2px 0 rgba(255, 255, 255, 0.42),
+    inset -2px -2px 0 rgba(100, 60, 0, 0.3),
+    3px 3px 0 rgba(0, 0, 0, 0.38);
+  transition:
+    transform 80ms ease,
+    box-shadow 80ms ease,
+    background 80ms ease;
 }
 .pixel-button:hover {
   background: #debb66;
   transform: translateY(-1px);
   box-shadow:
-    inset 2px 2px 0 rgba(255,255,255,0.42),
-    inset -2px -2px 0 rgba(100,60,0,0.3),
-    3px 5px 0 rgba(0,0,0,0.32);
+    inset 2px 2px 0 rgba(255, 255, 255, 0.42),
+    inset -2px -2px 0 rgba(100, 60, 0, 0.3),
+    3px 5px 0 rgba(0, 0, 0, 0.32);
 }
 .pixel-button:active {
   transform: translate(2px, 2px);
   box-shadow:
-    inset 2px 2px 0 rgba(255,255,255,0.2),
-    inset -2px -2px 0 rgba(100,60,0,0.3),
-    1px 1px 0 rgba(0,0,0,0.3);
+    inset 2px 2px 0 rgba(255, 255, 255, 0.2),
+    inset -2px -2px 0 rgba(100, 60, 0, 0.3),
+    1px 1px 0 rgba(0, 0, 0, 0.3);
 }
 
 /* ---- Inventory bar ---- */
@@ -163,9 +216,9 @@ body {
   background: #c4924a;
   border: 4px solid #7a4a20;
   box-shadow:
-    inset 2px 2px 0 rgba(255,255,255,0.2),
-    inset -2px -2px 0 rgba(0,0,0,0.28),
-    5px 5px 0 rgba(0,0,0,0.38);
+    inset 2px 2px 0 rgba(255, 255, 255, 0.2),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.28),
+    5px 5px 0 rgba(0, 0, 0, 0.38);
 }
 
 /* ---- Individual slot ---- */
@@ -181,9 +234,11 @@ body {
   justify-content: center;
   gap: 3px;
   box-shadow:
-    inset 2px 2px 0 rgba(255,255,255,0.42),
-    inset -2px -2px 0 rgba(0,0,0,0.22);
-  transition: background 80ms ease, transform 80ms ease;
+    inset 2px 2px 0 rgba(255, 255, 255, 0.42),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.22);
+  transition:
+    background 80ms ease,
+    transform 80ms ease;
 }
 .pixel-slot:hover {
   background: #f0d080;
@@ -194,15 +249,20 @@ body {
 .pixel-slot-active {
   background: #f8ea88;
   box-shadow:
-    inset 2px 2px 0 rgba(255,255,255,0.6),
-    inset -2px -2px 0 rgba(100,60,0,0.18),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.6),
+    inset -2px -2px 0 rgba(100, 60, 0, 0.18),
     0 0 0 2px #f0c830;
 }
 
 /* ---- Float animation ---- */
 @keyframes pixel-float {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 .pixel-float {
   animation: pixel-float 4s ease-in-out infinite;
@@ -215,8 +275,7 @@ body {
 /* Sandy earth background — like the path/farm tiles */
 .benefits-section {
   background-color: #c8a05a;
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect width='32' height='32' fill='%23c8a05a'/%3E%3Crect width='32' height='1' fill='%23b08840' opacity='0.45'/%3E%3Crect width='1' height='32' fill='%23b08840' opacity='0.45'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect width='32' height='32' fill='%23c8a05a'/%3E%3Crect width='32' height='1' fill='%23b08840' opacity='0.45'/%3E%3Crect width='1' height='32' fill='%23b08840' opacity='0.45'/%3E%3C/svg%3E");
   background-size: 32px 32px;
 }
 
@@ -229,10 +288,12 @@ body {
   height: 8px;
   background: repeating-linear-gradient(
     90deg,
-    #7a8a6a 0px, #7a8a6a 28px,
-    #6a7a5a 28px, #6a7a5a 32px
+    #7a8a6a 0px,
+    #7a8a6a 28px,
+    #6a7a5a 28px,
+    #6a7a5a 32px
   );
-  box-shadow: 0 3px 0 rgba(0,0,0,0.25);
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.25);
 }
 
 /* Oversized wooden sign / billboard for section title */
@@ -240,9 +301,9 @@ body {
   background: #e8c878;
   border: 4px solid #7a4a20;
   box-shadow:
-    inset 3px 3px 0 rgba(255,255,255,0.4),
-    inset -3px -3px 0 rgba(100,60,0,0.3),
-    6px 6px 0 rgba(0,0,0,0.38);
+    inset 3px 3px 0 rgba(255, 255, 255, 0.4),
+    inset -3px -3px 0 rgba(100, 60, 0, 0.3),
+    6px 6px 0 rgba(0, 0, 0, 0.38);
   position: relative;
 }
 /* Wooden peg details on billboard corners */
@@ -257,8 +318,12 @@ body {
   border: 2px solid #5a3010;
   border-radius: 50%;
 }
-.pixel-billboard::before { left: 16px; }
-.pixel-billboard::after  { right: 16px; }
+.pixel-billboard::before {
+  left: 16px;
+}
+.pixel-billboard::after {
+  right: 16px;
+}
 
 /* Benefits card grid — 2 col, 5th card centered */
 .benefits-grid {
@@ -297,8 +362,8 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow:
-    inset 2px 2px 0 rgba(255,255,255,0.42),
-    inset -2px -2px 0 rgba(0,0,0,0.22);
+    inset 2px 2px 0 rgba(255, 255, 255, 0.42),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.22);
 }
 
 /* ============================================
@@ -309,8 +374,16 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
-@media (max-width: 768px) { .pixel-grid-3col { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 500px)  { .pixel-grid-3col { grid-template-columns: 1fr; } }
+@media (max-width: 768px) {
+  .pixel-grid-3col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .pixel-grid-3col {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* ============================================
    PROBLEM SECTION — Dead soil
@@ -318,8 +391,20 @@ body {
 .problem-section {
   background: #28180a;
   background-image:
-    repeating-linear-gradient(0deg, rgba(0,0,0,0.18) 0px, transparent 1px, transparent 31px, rgba(0,0,0,0.18) 32px),
-    repeating-linear-gradient(90deg, rgba(0,0,0,0.18) 0px, transparent 1px, transparent 31px, rgba(0,0,0,0.18) 32px);
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.18) 0px,
+      transparent 1px,
+      transparent 31px,
+      rgba(0, 0, 0, 0.18) 32px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.18) 0px,
+      transparent 1px,
+      transparent 31px,
+      rgba(0, 0, 0, 0.18) 32px
+    );
   background-size: 32px 32px;
   position: relative;
 }
@@ -328,9 +413,9 @@ body {
   border: 4px solid #1e1008;
   padding: 22px 20px;
   box-shadow:
-    inset 1px 1px 0 rgba(255,255,255,0.07),
-    inset -1px -1px 0 rgba(0,0,0,0.5),
-    5px 5px 0 rgba(0,0,0,0.55);
+    inset 1px 1px 0 rgba(255, 255, 255, 0.07),
+    inset -1px -1px 0 rgba(0, 0, 0, 0.5),
+    5px 5px 0 rgba(0, 0, 0, 0.55);
 }
 
 /* ============================================
@@ -339,8 +424,20 @@ body {
 .roster-section {
   background: #5bbfb8;
   background-image:
-    repeating-linear-gradient(0deg, rgba(40,140,135,0.3) 0px, transparent 1px, transparent 31px, rgba(40,140,135,0.3) 32px),
-    repeating-linear-gradient(90deg, rgba(40,140,135,0.3) 0px, transparent 1px, transparent 31px, rgba(40,140,135,0.3) 32px);
+    repeating-linear-gradient(
+      0deg,
+      rgba(40, 140, 135, 0.3) 0px,
+      transparent 1px,
+      transparent 31px,
+      rgba(40, 140, 135, 0.3) 32px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(40, 140, 135, 0.3) 0px,
+      transparent 1px,
+      transparent 31px,
+      rgba(40, 140, 135, 0.3) 32px
+    );
   background-size: 32px 32px;
   position: relative;
 }
@@ -349,9 +446,9 @@ body {
   border: 4px solid #8b5a2b;
   overflow: hidden;
   box-shadow:
-    inset 2px 2px 0 rgba(255,255,255,0.4),
-    inset -2px -2px 0 rgba(120,70,10,0.2),
-    5px 5px 0 rgba(0,0,0,0.35);
+    inset 2px 2px 0 rgba(255, 255, 255, 0.4),
+    inset -2px -2px 0 rgba(120, 70, 10, 0.2),
+    5px 5px 0 rgba(0, 0, 0, 0.35);
 }
 .agent-card-accent {
   height: 8px;
@@ -364,8 +461,20 @@ body {
 .howto-section {
   background: #5da832;
   background-image:
-    repeating-linear-gradient(0deg, rgba(60,140,30,0.3) 0px, transparent 1px, transparent 31px, rgba(60,140,30,0.3) 32px),
-    repeating-linear-gradient(90deg, rgba(60,140,30,0.3) 0px, transparent 1px, transparent 31px, rgba(60,140,30,0.3) 32px);
+    repeating-linear-gradient(
+      0deg,
+      rgba(60, 140, 30, 0.3) 0px,
+      transparent 1px,
+      transparent 31px,
+      rgba(60, 140, 30, 0.3) 32px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(60, 140, 30, 0.3) 0px,
+      transparent 1px,
+      transparent 31px,
+      rgba(60, 140, 30, 0.3) 32px
+    );
   background-size: 32px 32px;
   position: relative;
 }
@@ -377,9 +486,9 @@ body {
   gap: 18px;
   align-items: flex-start;
   box-shadow:
-    inset 2px 2px 0 rgba(255,255,255,0.45),
-    inset -2px -2px 0 rgba(100,60,0,0.3),
-    5px 5px 0 rgba(0,0,0,0.35);
+    inset 2px 2px 0 rgba(255, 255, 255, 0.45),
+    inset -2px -2px 0 rgba(100, 60, 0, 0.3),
+    5px 5px 0 rgba(0, 0, 0, 0.35);
 }
 .step-number {
   width: 50px;
@@ -391,9 +500,9 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow:
-    inset 2px 2px 0 rgba(255,255,255,0.4),
-    inset -2px -2px 0 rgba(100,60,0,0.3),
-    3px 3px 0 rgba(0,0,0,0.35);
+    inset 2px 2px 0 rgba(255, 255, 255, 0.4),
+    inset -2px -2px 0 rgba(100, 60, 0, 0.3),
+    3px 3px 0 rgba(0, 0, 0, 0.35);
 }
 
 /* ============================================
@@ -401,8 +510,13 @@ body {
    ============================================ */
 .faq-section {
   background: #d4a856;
-  background-image:
-    repeating-linear-gradient(0deg, rgba(0,0,0,0.07) 0px, transparent 1px, transparent 15px, rgba(0,0,0,0.07) 16px);
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.07) 0px,
+    transparent 1px,
+    transparent 15px,
+    rgba(0, 0, 0, 0.07) 16px
+  );
   background-size: 100% 16px;
   position: relative;
 }
@@ -411,9 +525,9 @@ body {
   border: 4px solid #8b5a2b;
   cursor: pointer;
   box-shadow:
-    inset 2px 2px 0 rgba(255,255,255,0.4),
-    inset -2px -2px 0 rgba(120,70,10,0.2),
-    4px 4px 0 rgba(0,0,0,0.3);
+    inset 2px 2px 0 rgba(255, 255, 255, 0.4),
+    inset -2px -2px 0 rgba(120, 70, 10, 0.2),
+    4px 4px 0 rgba(0, 0, 0, 0.3);
 }
 .faq-item-header {
   padding: 18px 20px;
@@ -434,8 +548,8 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow:
-    inset 1px 1px 0 rgba(255,255,255,0.4),
-    inset -1px -1px 0 rgba(0,0,0,0.2);
+    inset 1px 1px 0 rgba(255, 255, 255, 0.4),
+    inset -1px -1px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* ============================================
@@ -444,15 +558,31 @@ body {
 .final-cta-section {
   background: #0e2808;
   background-image:
-    repeating-linear-gradient(0deg, rgba(20,60,10,0.5) 0px, transparent 1px, transparent 31px, rgba(20,60,10,0.5) 32px),
-    repeating-linear-gradient(90deg, rgba(20,60,10,0.5) 0px, transparent 1px, transparent 31px, rgba(20,60,10,0.5) 32px);
+    repeating-linear-gradient(
+      0deg,
+      rgba(20, 60, 10, 0.5) 0px,
+      transparent 1px,
+      transparent 31px,
+      rgba(20, 60, 10, 0.5) 32px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(20, 60, 10, 0.5) 0px,
+      transparent 1px,
+      transparent 31px,
+      rgba(20, 60, 10, 0.5) 32px
+    );
   background-size: 32px 32px;
   position: relative;
 }
 .cta-glow {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 70% 65% at 50% 50%, rgba(50,120,20,0.45) 0%, transparent 100%);
+  background: radial-gradient(
+    ellipse 70% 65% at 50% 50%,
+    rgba(50, 120, 20, 0.45) 0%,
+    transparent 100%
+  );
   pointer-events: none;
 }
 .cta-button-xl {
@@ -460,32 +590,46 @@ body {
   border: 4px solid #2e5818;
   cursor: pointer;
   box-shadow:
-    inset 3px 3px 0 rgba(255,255,255,0.28),
-    inset -3px -3px 0 rgba(0,0,0,0.3),
-    0 0 30px rgba(80,160,30,0.4),
-    6px 6px 0 rgba(0,0,0,0.5);
-  transition: transform 80ms ease, box-shadow 80ms ease, background 80ms ease;
+    inset 3px 3px 0 rgba(255, 255, 255, 0.28),
+    inset -3px -3px 0 rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(80, 160, 30, 0.4),
+    6px 6px 0 rgba(0, 0, 0, 0.5);
+  transition:
+    transform 80ms ease,
+    box-shadow 80ms ease,
+    background 80ms ease;
 }
 .cta-button-xl:hover {
   background: #6aaa3a;
   transform: translateY(-2px);
   box-shadow:
-    inset 3px 3px 0 rgba(255,255,255,0.28),
-    inset -3px -3px 0 rgba(0,0,0,0.3),
-    0 0 42px rgba(100,190,40,0.55),
-    6px 8px 0 rgba(0,0,0,0.45);
+    inset 3px 3px 0 rgba(255, 255, 255, 0.28),
+    inset -3px -3px 0 rgba(0, 0, 0, 0.3),
+    0 0 42px rgba(100, 190, 40, 0.55),
+    6px 8px 0 rgba(0, 0, 0, 0.45);
 }
 .cta-button-xl:active {
   transform: translate(4px, 4px);
   box-shadow:
-    inset 3px 3px 0 rgba(255,255,255,0.15),
-    2px 2px 0 rgba(0,0,0,0.4);
+    inset 3px 3px 0 rgba(255, 255, 255, 0.15),
+    2px 2px 0 rgba(0, 0, 0, 0.4);
 }
 
 /* ---- Slot shimmer on active ---- */
 @keyframes slot-pulse {
-  0%, 100% { box-shadow: inset 2px 2px 0 rgba(255,255,255,0.6), inset -2px -2px 0 rgba(100,60,0,0.18), 0 0 0 2px #f0c830; }
-  50%       { box-shadow: inset 2px 2px 0 rgba(255,255,255,0.6), inset -2px -2px 0 rgba(100,60,0,0.18), 0 0 0 3px #f8e040; }
+  0%,
+  100% {
+    box-shadow:
+      inset 2px 2px 0 rgba(255, 255, 255, 0.6),
+      inset -2px -2px 0 rgba(100, 60, 0, 0.18),
+      0 0 0 2px #f0c830;
+  }
+  50% {
+    box-shadow:
+      inset 2px 2px 0 rgba(255, 255, 255, 0.6),
+      inset -2px -2px 0 rgba(100, 60, 0, 0.18),
+      0 0 0 3px #f8e040;
+  }
 }
 .pixel-slot-active {
   animation: slot-pulse 2s ease-in-out infinite;

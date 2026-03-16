@@ -1,5 +1,4 @@
 const Button = ({ children, href }: { children: React.ReactNode; href?: string }) => {
-
   return (
     <a href={href} className="inline-flex no-underline">
       <div
@@ -20,7 +19,7 @@ const Button = ({ children, href }: { children: React.ReactNode; href?: string }
         </div>
       </div>
     </a>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button

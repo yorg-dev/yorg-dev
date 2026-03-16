@@ -2,13 +2,13 @@ import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 const HOME_NAV_ITEMS: { icon: string; label: string; href: string; route?: boolean }[] = [
-  { icon: '🏠', label: 'HOME',         href: '/',             route: true },
-  { icon: '⭐', label: 'BENEFITS',     href: '/#benefits' },
-  { icon: '🌿', label: 'AGENTS',       href: '/#agents' },
-  { icon: '🗺️', label: 'HOW',          href: '/#how' },
-  { icon: '❓', label: 'FAQ',           href: '/#faq' },
+  { icon: '🏠', label: 'HOME', href: '/', route: true },
+  { icon: '⭐', label: 'BENEFITS', href: '/#benefits' },
+  { icon: '🌿', label: 'AGENTS', href: '/#agents' },
+  { icon: '🗺️', label: 'HOW', href: '/#how' },
+  { icon: '❓', label: 'FAQ', href: '/#faq' },
   { icon: '🔌', label: 'INTEGRATIONS', href: '/integrations', route: true },
-  { icon: '✉️', label: 'CONTACT',      href: '/contact',      route: true },
+  { icon: '✉️', label: 'CONTACT', href: '/contact', route: true },
 ]
 
 const Navigation = () => {
@@ -20,7 +20,6 @@ const Navigation = () => {
 
   return (
     <nav className="relative z-10 flex items-center justify-between gap-4 px-5 pt-5">
-
       {/* Outer wooden rail */}
       <div
         className="
@@ -40,9 +39,7 @@ const Navigation = () => {
           "
         >
           {HOME_NAV_ITEMS.map((item, i) => {
-            const isActive = isSubPage
-              ? item.href === location.pathname
-              : activeHome === i
+            const isActive = isSubPage ? item.href === location.pathname : activeHome === i
 
             const slotShadow = isActive ? 'shadow-slot-active' : 'shadow-slot-default'
 
@@ -63,18 +60,16 @@ const Navigation = () => {
             )
 
             return item.route ? (
-              <Link
-                key={item.label}
-                to={item.href}
-                className={sharedClass}
-              >
+              <Link key={item.label} to={item.href} className={sharedClass}>
                 {children}
               </Link>
             ) : (
               <a
                 key={item.label}
                 href={item.href}
-                onClick={() => { if (!isSubPage) setActiveHome(i) }}
+                onClick={() => {
+                  if (!isSubPage) setActiveHome(i)
+                }}
                 className={sharedClass}
               >
                 {children}
