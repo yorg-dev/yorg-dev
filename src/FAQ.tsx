@@ -3,31 +3,31 @@ import { useState } from 'react'
 const FAQS = [
   {
     q: "I'm not technical at all.",
-    a: 'Yorg was grown for exactly that. If you can tap a screen, you can plant your first Agent. The game teaches you by doing — not by reading. Most Business Owners have their first Agent live before they finish their coffee.',
+    a: 'Yorg was built for exactly that. If you can tap a screen, you can deploy your first AI Agent. The game teaches you by doing (not by reading). Most Business Owners have their first Agent live before they finish their coffee.',
   },
   {
     q: "I've tried AI tools before and they didn't deliver.",
-    a: 'Tools wither without a system behind them. Yorg gives you the system, the Agents, and the community — not just another tool that sits in a drawer. The difference is the game: it walks you through setup, explains the why, and keeps you tending until the harvest comes in.',
+    a: "Tools wither without a system behind them. Yorg gives you the system, the Agents, and the community.  It's not just another tool that sits in a drawer. The difference is the game: it walks you through setup, explains the why, and keeps you tending until the harvest comes in.",
   },
   {
     q: "I don't have time to learn something new.",
-    a: "That's exactly why your farm needs this. You're tending every row yourself. One Agent gives you time back — starting today. Your first session is 10–15 minutes. After that, your Agent runs without you.",
+    a: "That's exactly why your land needs this. You're tending everything yourself. One Agent gives you time back starting from today. Your first session is 10–15 minutes. After that, your Agent can run without you.",
   },
   {
     q: 'Is this actually a game? Or a business tool?',
-    a: "Both. That's the point. It's a warm, approachable game that teaches you real AI skills you'll use in your real business — while you're having fun. The two grow together.",
+    a: "Both. That's the point. It's a warm, approachable game that teaches you real AI skills you'll use in your real business while you're having fun. The two grow together.",
   },
   {
     q: 'What does it actually cost?',
-    a: "Less than the hours you're losing to manual work every week. Less than a single day's worth of missed follow-up. And there's a free plan to plant your first Agent and see the harvest for yourself.",
+    a: "Less than the hours you're losing to manual work every week. Less than a single day's worth of missed follow-up. And there's a free plan to deploy your first Agent and see the results for yourself.",
   },
   {
     q: 'What if I get stuck?',
-    a: "You're never growing alone. The Yorg community — thousands of Business Owners tending their own gardens — is right there every step of the way. Plus our Plot Guides are available to walk you through any tricky terrain.",
+    a: "You're never growing alone. The Yorg community is right there every step of the way. Plus our Quests are available to walk you through any tricky terrain.",
   },
   {
     q: 'My business is different.',
-    a: 'Coaches, contractors, agencies, e-commerce stores, local shops, consultants — if you have customers to serve and leads to tend, Yorg grows with you. The farm takes the shape of your business.',
+    a: 'Coaches, contractors, agencies, e-commerce stores, local shops, consultants...  If you have customers to serve and leads to tend, Yorg grows with you. The Land takes the shape of your business.',
   },
 ]
 
@@ -35,7 +35,7 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <section className="faq-section relative px-6 py-20">
+    <section className="faq-section relative px-6 py-20" id="faq">
       <div
         className="benefits-top-border"
         style={{
@@ -69,17 +69,9 @@ export default function FAQ() {
         {FAQS.map((item, i) => (
           <div key={i} className="faq-item" onClick={() => setOpen(open === i ? null : i)}>
             <div className="faq-item-header">
-              <p
-                className="pixel-font"
-                style={{ fontSize: 8, color: '#3a2008', lineHeight: 1.9, paddingRight: 16 }}
-              >
-                {item.q}
-              </p>
+              <p className="text-lg pr-2 text-wood-900">{item.q}</p>
               <div className="faq-toggle">
-                <span
-                  className="pixel-font"
-                  style={{ fontSize: 12, color: '#3a2008', lineHeight: 1 }}
-                >
+                <span className="pixel-font text-wood-900" style={{ fontSize: 12, lineHeight: 1 }}>
                   {open === i ? '−' : '+'}
                 </span>
               </div>

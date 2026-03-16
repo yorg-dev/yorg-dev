@@ -137,7 +137,6 @@ const SECTIONS: Section[] = [
 export default function Privacy() {
   return (
     <div className="min-h-screen bg-soil-900">
-      {/* Header */}
       <div
         className="relative overflow-hidden bg-grass-950 px-6 pb-20"
         style={{
@@ -175,7 +174,6 @@ export default function Privacy() {
         </div>
       </div>
 
-      {/* Content card */}
       <div className="max-w-3xl mx-auto px-6 -mt-8 pb-20 relative z-10">
         <div className="bg-wood-100 border-4 border-wood-700 shadow-[inset_2px_2px_0_rgba(255,255,255,0.45),inset_-2px_-2px_0_rgba(100,60,0,0.3),6px_6px_0_rgba(0,0,0,0.45)]">
           {/* Intro */}

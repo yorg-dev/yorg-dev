@@ -47,7 +47,7 @@ export default function FinalCTA() {
             className="pixel-font"
             style={{ fontSize: 11, color: '#e8f8d0', letterSpacing: '0.08em' }}
           >
-            🌱 DEPLOY YOUR FIRST AGENT — FREE
+            DEPLOY YOUR FIRST AGENT — FREE
           </span>
         </a>
         <p

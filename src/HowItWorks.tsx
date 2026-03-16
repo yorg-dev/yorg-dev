@@ -1,31 +1,26 @@
 const STEPS = [
   {
     n: '01',
-    icon: '🗺️',
     title: 'Create a New Land',
     body: 'Pick the part of your business that needs tending most. Sales? Social? Follow-up? Each land is waiting.',
   },
   {
     n: '02',
-    icon: '🌱',
     title: 'Connect your Tools',
     body: 'Integrate your favorite Tools.  The game walks you through everything you need to get started.  No jargon. No tech speak. Just clear, warm guidance.',
   },
   {
     n: '03',
-    icon: '🌿',
     title: 'Add Agents',
     body: 'Your Agent knows how to use your integrations. Step by step, you set up the real Agent in your actual business. Takes 10–15 minutes.',
   },
   {
     n: '04',
-    icon: '🌾',
     title: 'Watch the Magic Happen',
     body: 'Your Agent tends your business around the clock. It handles conversations, qualifies leads, and publishes posts. You focus on what you love.',
   },
   {
     n: '05',
-    icon: '🏡',
     title: 'Learn from Others',
     body: 'Unlock new Agents. Connect your lands.  Watch your whole land hum along.  Each Agent handing off tasks to the next, tending your business like a well-run operation.',
   },
@@ -41,8 +36,6 @@ export default function HowItWorks() {
             'repeating-linear-gradient(90deg, #4a9028 0px, #4a9028 28px, #3a8020 28px, #3a8020 32px)',
         }}
       />
-
-      {/* Header */}
       <div className="flex flex-col items-center mb-14">
         <div className="pixel-billboard px-10 py-4 mb-6">
           <span
@@ -63,8 +56,6 @@ export default function HowItWorks() {
           From bare soil to first harvest all in one session.
         </p>
       </div>
-
-      {/* Steps */}
       <div
         style={{
           maxWidth: 660,
@@ -98,7 +89,6 @@ export default function HowItWorks() {
           </div>
         ))}
       </div>
-
       <div className="flex justify-center">
         <a
           href={import.meta.env.VITE_GAME_URL}
@@ -108,7 +98,7 @@ export default function HowItWorks() {
             className="pixel-font"
             style={{ fontSize: 11, color: '#e8f8d0', letterSpacing: '0.08em' }}
           >
-            🌱 START YOUR FIRST QUEST — FREE
+            Start Your First Quest — FREE
           </span>
         </a>
       </div>

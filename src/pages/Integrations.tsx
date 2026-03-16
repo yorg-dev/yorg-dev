@@ -232,18 +232,14 @@ export default function Integrations() {
         </NavBar>
 
         <div className="relative z-10 max-w-4xl mx-auto text-center mt-16">
-          <div className="pixel-scroll inline-block px-10 py-6 mb-8">
-            <p className="pixel-font text-wood-950" style={{ fontSize: 10, lineHeight: 2.4 }}>
-              INTEGRATIONS
-            </p>
-          </div>
+          <h3 className="text-5xl font-display text-grass-400 mb-8">Integrations</h3>
 
           <p
             className="text-grass-300 text-lg font-bold max-w-2xl mx-auto mb-10 leading-relaxed"
             style={{ fontFamily: 'Nunito, sans-serif' }}
           >
-            Connect your Yorg agents to the tools you already use. Automate across your entire
-            business stack — no code required.
+            Connect your Yorg Agents to the tools you already use. Automate across your entire
+            business stack. The best part is, no code is required.
           </p>
 
           <div className="flex items-center justify-center gap-6 flex-wrap">
@@ -338,7 +334,6 @@ export default function Integrations() {
         ))}
       </div>
 
-      {/* Request an integration CTA */}
       <div
         className="relative overflow-hidden bg-grass-950 px-6 py-20 text-center"
         style={{
@@ -357,7 +352,7 @@ export default function Integrations() {
           }}
         />
         <div className="relative z-10 flex flex-col items-center">
-          <h3 className="text-4xl text-white/90 mb-4">Don't See Your Tool?</h3>
+          <h3 className="text-4xl text-white/90 mb-4">Don't See Your Favorite Tool?</h3>
 
           <p
             className="text-grass-300 font-bold text-base max-w-md mx-auto mb-8 leading-relaxed"
@@ -370,9 +365,7 @@ export default function Integrations() {
             to="/contact"
             className="inline-block bg-grass-700 border-4 border-grass-900 px-10 py-4 cursor-pointer transition-[transform,box-shadow,background] duration-[80ms] no-underline shadow-[inset_3px_3px_0_rgba(255,255,255,0.28),inset_-3px_-3px_0_rgba(0,0,0,0.3),0_0_24px_rgba(80,160,30,0.4),5px_5px_0_rgba(0,0,0,0.5)] hover:-translate-y-0.5 hover:bg-grass-600 hover:shadow-[inset_3px_3px_0_rgba(255,255,255,0.28),inset_-3px_-3px_0_rgba(0,0,0,0.3),0_0_40px_rgba(100,190,40,0.5),5px_7px_0_rgba(0,0,0,0.45)] active:translate-x-[3px] active:translate-y-[3px] active:shadow-[inset_3px_3px_0_rgba(255,255,255,0.15),2px_2px_0_rgba(0,0,0,0.4)]"
           >
-            <span className="pixel-font text-[#e8f8d0] tracking-[0.08em]" style={{ fontSize: 9 }}>
-              🌱 REQUEST AN INTEGRATION
-            </span>
+            <span className="text-lg font-bold text-[#e8f8d0]">Request An Integration</span>
           </Link>
         </div>
       </div>

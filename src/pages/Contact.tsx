@@ -79,7 +79,6 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-soil-900">
-      {/* Header */}
       <div
         className="relative overflow-hidden bg-grass-950 px-6 pb-20"
         style={{
@@ -103,7 +102,7 @@ export default function Contact() {
         </NavBar>
 
         <div className="relative z-10 max-w-2xl mx-auto text-center mt-16">
-          <h3 className="text-4xl text-white/90 mb-4">Contact Us</h3>
+          <h3 className="text-4xl text-grass-300 mb-8">Contact Us</h3>
 
           <p
             className="text-grass-300 text-lg font-bold leading-relaxed"
@@ -113,8 +112,6 @@ export default function Contact() {
           </p>
         </div>
       </div>
-
-      {/* Form card */}
       <div className="max-w-2xl mx-auto px-6 -mt-8 pb-20 relative z-10">
         <div className="bg-wood-100 border-4 border-wood-700 p-8 shadow-[inset_2px_2px_0_rgba(255,255,255,0.45),inset_-2px_-2px_0_rgba(100,60,0,0.3),6px_6px_0_rgba(0,0,0,0.45)]">
           {status === 'success' ? (
@@ -157,7 +154,6 @@ export default function Contact() {
                 style={{ display: 'none' }}
               />
 
-              {/* Name + Email row */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label className={labelClass} style={{ fontSize: 7 }}>
@@ -189,7 +185,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Category */}
               <div>
                 <label className={labelClass} style={{ fontSize: 7 }}>
                   CATEGORY
@@ -209,7 +204,6 @@ export default function Contact() {
                 </select>
               </div>
 
-              {/* Subject */}
               <div>
                 <label className={labelClass} style={{ fontSize: 7 }}>
                   SUBJECT
@@ -225,7 +219,6 @@ export default function Contact() {
                 />
               </div>
 
-              {/* Message */}
               <div>
                 <label className={labelClass} style={{ fontSize: 7 }}>
                   MESSAGE{' '}
@@ -245,12 +238,10 @@ export default function Contact() {
                 />
               </div>
 
-              {/* Error */}
               {status === 'error' && (
                 <p className="text-red-500 font-semibold text-sm -mt-2">{errorMsg}</p>
               )}
 
-              {/* Submit */}
               <div className="flex justify-end">
                 <button
                   type="submit"
