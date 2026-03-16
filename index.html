@@ -2,9 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>if('%VITE_GTM_ID%'){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','%VITE_GTM_ID%');}</script>
     <script>
-      // GitHub Pages SPA: decode the path encoded by 404.html
-      // e.g. /?/integrations  →  /integrations
       ;(function (l) {
         if (l.search[1] === '/') {
           var decoded = l.search
@@ -22,7 +25,7 @@
       })(window.location)
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yorg — Grow. Build. Survive.</title>
+    <title>Yorg — Grow. Build. Thrive.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,6 +34,8 @@
     />
   </head>
   <body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=%VITE_GTM_ID%"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
