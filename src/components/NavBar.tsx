@@ -2,7 +2,7 @@ import { type ReactNode } from 'react'
 
 export default function NavBar({ children }: { children: ReactNode }) {
   return (
-    <nav className="relative z-10 flex justify-center -mt-2">
+    <nav className="relative z-30 flex justify-center -mt-2">
       <div
         className="
           inline-flex items-center justify-center
