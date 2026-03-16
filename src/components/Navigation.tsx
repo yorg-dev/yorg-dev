@@ -1,14 +1,14 @@
 import { useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
-const HOME_NAV_ITEMS: { icon: string; label: string; href: string }[] = [
-  { icon: '🏠', label: 'HOME',     href: '/' },
-  { icon: '⭐', label: 'BENEFITS', href: '/#benefits' },
-  { icon: '🌿', label: 'AGENTS',   href: '/#agents' },
-  { icon: '🗺️', label: 'HOW',      href: '/#how' },
-  { icon: '❓', label: 'FAQ',       href: '/#faq' },
-  { icon: '🔌', label: 'INTEGRATIONS', href: '/integrations' },
-  { icon: '✉️', label: 'CONTACT',      href: '/contact' },
+const HOME_NAV_ITEMS: { icon: string; label: string; href: string; route?: boolean }[] = [
+  { icon: '🏠', label: 'HOME',         href: '/',             route: true },
+  { icon: '⭐', label: 'BENEFITS',     href: '/#benefits' },
+  { icon: '🌿', label: 'AGENTS',       href: '/#agents' },
+  { icon: '🗺️', label: 'HOW',          href: '/#how' },
+  { icon: '❓', label: 'FAQ',           href: '/#faq' },
+  { icon: '🔌', label: 'INTEGRATIONS', href: '/integrations', route: true },
+  { icon: '✉️', label: 'CONTACT',      href: '/contact',      route: true },
 ]
 
 const Navigation = () => {
@@ -46,23 +46,38 @@ const Navigation = () => {
 
             const slotShadow = isActive ? 'shadow-slot-active' : 'shadow-slot-default'
 
-            return (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={() => { if (!isSubPage) setActiveHome(i) }}
-                className={`
-                  flex-1 min-w-0 h-14 flex flex-col items-center justify-center gap-1
-                  no-underline cursor-pointer transition-all duration-75
-                  rounded-[12px]
-                  ${isActive ? 'bg-wood-100' : 'bg-wood-200'}
-                  ${slotShadow}
-                `}
-              >
+            const sharedClass = `
+              flex-1 min-w-0 h-14 flex flex-col items-center justify-center gap-1
+              no-underline cursor-pointer transition-all duration-75
+              rounded-[12px]
+              ${isActive ? 'bg-wood-100' : 'bg-wood-200'}
+              ${slotShadow}
+            `
+            const children = (
+              <>
                 <span className="text-lg leading-none">{item.icon}</span>
                 <span className="pixel-font text-[6px] tracking-[0.04em] leading-none text-wood-950">
                   {item.label}
                 </span>
+              </>
+            )
+
+            return item.route ? (
+              <Link
+                key={item.label}
+                to={item.href}
+                className={sharedClass}
+              >
+                {children}
+              </Link>
+            ) : (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={() => { if (!isSubPage) setActiveHome(i) }}
+                className={sharedClass}
+              >
+                {children}
               </a>
             )
           })}
