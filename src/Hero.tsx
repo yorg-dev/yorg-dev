@@ -38,7 +38,7 @@ export default function Hero() {
               The Easiest Way to Start and Grow Your Business With <span className="bg-gradient-to-r from-grass-600 via-wood-600 to-soil-800 inline-block text-transparent bg-clip-text text-shadow-lg shadow-gray-700">AI Automation</span>
             </h1>
 
-            <p className="sm:max-w-96 md:max-w-2xl lg:mx-auto text-base text-soil-800 lg:text-lg xl:text-lg mb-9">
+            <p className="sm:max-w-96 md:max-w-2xl lg:mx-auto text-base text-soil-800 lg:text-2xl xl:text-2xl mb-9">
               Using AI Agents has never been this Easy (or This Much Fun!)
             </p>
           </div>
