@@ -15,16 +15,9 @@ export default function Problem() {
         style={{ background: 'repeating-linear-gradient(90deg, #4a3828 0px, #4a3828 28px, #3a2818 28px, #3a2818 32px)' }}
       />
 
-      {/* Header */}
-      <div className="flex justify-center mb-14">
-        <div className="weed-card text-center" style={{ maxWidth: 660 }}>
-          <p className="pixel-font mb-3" style={{ fontSize: 9, color: '#d09060', lineHeight: 2.2 }}>
-            YOUR BUSINESS IS OVERGROWN.
-          </p>
-          <p className="pixel-font" style={{ fontSize: 8, color: '#907040', lineHeight: 2.2 }}>
-            AND YOU'RE THE ONLY ONE TENDING IT.
-          </p>
-        </div>
+      <div className="flex flex-col items-center text-center mb-14">
+        <h3 className="text-4xl text-white/90 mb-4">Your Business is Overgrown</h3>
+        <h2 className="text-xl text-white/90 mb-4">and You're the Only One tending it</h2>
       </div>
 
       {/* Weed cards */}
