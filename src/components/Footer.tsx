@@ -72,10 +72,10 @@ function FooterNewsletter() {
     e.preventDefault()
     if (!email.trim() || website) { setStatus('success'); return }
     setStatus('loading')
-    const url = import.meta.env.VITE_NEWSLETTER_URL as string | undefined
-    if (!url) { setStatus('success'); return }
+    const apiUrl = import.meta.env.VITE_API_URL as string | undefined
+    if (!apiUrl) { setStatus('success'); return }
     try {
-      const res = await fetch(url, {
+      const res = await fetch(`${apiUrl}/newsletter_subscriptions`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: email.trim() }),
