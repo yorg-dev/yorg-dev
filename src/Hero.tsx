@@ -1,4 +1,4 @@
-import logo from './assets/yorg-logo.png'
+import logo from './assets/yorg_logo.png'
 import landBg from './assets/land_background.png'
 import NavBar from './components/NavBar'
 import NavItems from './components/NavItems'

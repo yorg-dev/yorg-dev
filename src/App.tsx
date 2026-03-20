@@ -8,6 +8,7 @@ import AgentRoster from './AgentRoster'
 import HowItWorks from './HowItWorks'
 import FAQ from './FAQ'
 import Newsletter from './Newsletter'
+import Community from './Community'
 import FinalCTA from './FinalCTA'
 import Footer from './components/Footer'
 import IntegrationsPreview from './IntegrationsPreview'
@@ -27,6 +28,7 @@ function Home() {
       <IntegrationsPreview />
       <HowItWorks />
       <FAQ />
+      <Community />
       <FinalCTA />
       <Footer />
     </>
